@@ -3,38 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Update Title and Meta Description -->
     <title>My Curated Life - Rinzin Dorji</title>
     <meta name="description" content="Explore curated content, insights, and experiences across organic agriculture, photography, travel, and more by Rinzin Dorji.">
     <meta name="author" content="Rinzin Dorji">
+    <meta name="theme-color" content="#0d1117">
+    <meta name="color-scheme" content="dark light">
+    <link rel="canonical" href="https://rinzinzz.github.io/Org/">
 
-    <!-- Modern Font (Example: Inter) -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Curated Life - Rinzin Dorji">
+    <meta property="og:description" content="Explore curated content, insights, and experiences across organic agriculture, photography, travel, and more by Rinzin Dorji.">
+    <meta property="og:url" content="https://rinzinzz.github.io/Org/">
+    <meta property="og:site_name" content="Rinzin Dorji">
+    <meta property="og:image" content="https://rinzinzz.github.io/Org/IMG_4759.JPG">
+    <meta property="og:image:alt" content="Portrait of Rinzin Dorji">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My Curated Life - Rinzin Dorji">
+    <meta name="twitter:description" content="Explore curated content, insights, and experiences across organic agriculture, photography, travel, and more by Rinzin Dorji.">
+    <meta name="twitter:image" content="https://rinzinzz.github.io/Org/IMG_4759.JPG">
+    <meta name="twitter:creator" content="@RinzinDorji">
+
+    <!-- Modern Font (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Link External CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon (Placeholder) -->
+    <!-- Favicon: file + data URI fallback (green circle with RG) -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23238636'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Inter,Arial' font-size='14' font-weight='700' fill='white'%3ERD%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Rinzin Dorji",
+      "url": "https://rinzinzz.github.io/Org/",
+      "image": "https://rinzinzz.github.io/Org/IMG_4759.JPG",
+      "description": "Curating and sharing insights on organic agriculture, photography, travel and more.",
+      "sameAs": ["https://github.com/Rinzinzz"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "My Curated Life - Rinzin Dorji",
+      "url": "https://rinzinzz.github.io/Org/",
+      "author": { "@type": "Person", "name": "Rinzin Dorji" },
+      "description": "Explore curated content, insights, and experiences across organic agriculture, photography, travel, and more by Rinzin Dorji."
+    }
+    </script>
 </head>
 <body>
-    <!-- Skip Link -->
+    <!-- Skip Link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
     <header class="site-header" id="site-header">
         <div class="container header-container">
             <div class="logo">
-                <a href="/" aria-label="Homepage">
-                    <svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;"><circle cx="8" cy="8" r="8" fill="#238636"/><path d="M8 3.5C6.07 3.5 4.5 5.07 4.5 7C4.5 8.23 5.23 9.29 6.25 9.75C6.38 9.78 6.43 9.7 6.43 9.63C6.43 9.57 6.43 9.41 6.43 9.25C5.68 9.41 5.5 8.93 5.5 8.93C5.39 8.68 5.18 8.61 5.18 8.61C4.89 8.43 5.2 8.44 5.2 8.44C5.52 8.46 5.7 8.77 5.7 8.77C5.98 9.25 6.47 9.11 6.67 9.04C6.7 8.83 6.78 8.7 6.87 8.62C6.13 8.54 5.34 8.28 5.34 7.18C5.34 6.85 5.46 6.6 5.65 6.41C5.62 6.33 5.52 6.04 5.68 5.62C5.68 5.62 5.91 5.54 6.43 5.81C6.65 5.75 6.89 5.72 7.13 5.72C7.37 5.72 7.61 5.75 7.83 5.81C8.35 5.54 8.58 5.62 8.58 5.62C8.74 6.04 8.64 6.33 8.61 6.41C8.8 6.6 8.92 6.85 8.92 7.18C8.92 8.29 8.13 8.54 7.39 8.62C7.5 8.72 7.6 8.91 7.6 9.21C7.6 9.62 7.59 9.89 7.59 9.97C7.59 10.04 7.64 10.12 7.77 10.09C8.79 9.29 9.5 8.23 9.5 7C9.5 5.07 7.93 3.5 8 3.5Z" fill="#fff"/></svg>
+                <a href="index.html" aria-label="Homepage - Rinzin Dorji">
+                    <svg width="32" height="32" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#238636"/><path d="M8 3.5C6.07 3.5 4.5 5.07 4.5 7C4.5 8.23 5.23 9.29 6.25 9.75C6.38 9.78 6.43 9.7 6.43 9.63C6.43 9.57 6.43 9.41 6.43 9.25C5.68 9.41 5.5 8.93 5.5 8.93C5.39 8.68 5.18 8.61 5.18 8.61C4.89 8.43 5.2 8.44 5.2 8.44C5.52 8.46 5.7 8.77 5.7 8.77C5.98 9.25 6.47 9.11 6.67 9.04C6.7 8.83 6.78 8.7 6.87 8.62C6.13 8.54 5.34 8.28 5.34 7.18C5.34 6.85 5.46 6.6 5.65 6.41C5.62 6.33 5.52 6.04 5.68 5.62C5.68 5.62 5.91 5.54 6.43 5.81C6.65 5.75 6.89 5.72 7.13 5.72C7.37 5.72 7.61 5.75 7.83 5.81C8.35 5.54 8.58 5.62 8.58 5.62C8.74 6.04 8.64 6.33 8.61 6.41C8.8 6.6 8.92 6.85 8.92 7.18C8.92 8.29 8.13 8.54 7.39 8.62C7.5 8.72 7.6 8.91 7.6 9.21C7.6 9.62 7.59 9.89 7.59 9.97C7.59 10.04 7.64 10.12 7.77 10.09C8.79 9.29 9.5 8.23 9.5 7C9.5 5.07 7.93 3.5 8 3.5Z" fill="#fff"/></svg>
                     Rinzin Dorji
                 </a>
             </div>
+            <div class="header-actions">
+                <button id="theme-toggle" aria-label="Switch to light theme" title="Toggle theme" type="button">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation-list" aria-label="Toggle navigation menu" type="button">
+                    <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
             <nav class="main-navigation" aria-label="Main Navigation">
                 <ul id="main-navigation-list" class="nav-list">
-                    <li><a href="index.html" class="nav-link current-page">Home</a></li>
+                    <li><a href="index.html" class="nav-link current-page" aria-current="page">Home</a></li>
                     <li><a href="sub_pages/organic-agriculture.html" class="nav-link">Agriculture</a></li>
                     <li><a href="sub_pages/photography.html" class="nav-link">Photography</a></li>
                     <li><a href="sub_pages/travel.html" class="nav-link">Travel</a></li>
@@ -54,38 +107,35 @@
             <section class="hero-section animate-on-scroll">
                 <div class="container">
                     <div class="hero-content">
-                        <h1 class="hero-title">Sharing Insights & Curated Discoveries</h1>
+                        <h1 class="hero-title">Sharing Insights &amp; Curated Discoveries</h1>
                         <p class="hero-subtitle">Explore a personal collection of thoughts, resources, and experiences across diverse passions.</p>
-                        <!-- Optional CTA -->
                         <a href="sub_pages/about.html" class="button hero-button">Learn More About Me</a>
                     </div>
-                    <!-- Optional: Add a subtle background image/video/graphic via CSS -->
                 </div>
             </section>
 
             <!-- Introduction Section -->
-            <section class="intro-section">
+            <section class="intro-section" aria-labelledby="intro-heading">
                 <div class="container intro-container">
                     <div class="intro-image animate-on-scroll">
-                        <img src="IMG_4759.JPG" alt="Portrait of Rinzin Dorji" loading="lazy">
+                        <img src="IMG_4759.JPG" alt="Portrait of Rinzin Dorji smiling outdoors" loading="lazy" decoding="async" width="180" height="180" fetchpriority="low">
                     </div>
                     <div class="intro-text animate-on-scroll delay-1">
-                        <h2>Hi, I'm Rinzin Dorji</h2>
+                        <h2 id="intro-heading">Hi, I'm Rinzin Dorji</h2>
                         <p>Welcome to my personal corner of the web. I believe in the power of sharing knowledge and experiences. Here, I curate and reflect on topics close to my heart, from the grounding practices of organic agriculture to the visual stories captured through photography and the enriching perspectives gained from travel.</p>
                         <p>My goal is to create a space for inspiration, learning, and connection. Dive in and explore!</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Featured Content Sections (Example Structure) -->
-            <section id="featured-agriculture" class="featured-section featured-agriculture">
+            <!-- Featured Content Sections -->
+            <section id="featured-agriculture" class="featured-section featured-agriculture" aria-labelledby="agriculture-heading">
                 <div class="container">
-                    <h2 class="section-title animate-on-scroll">Organic Agriculture Insights</h2>
+                    <h2 id="agriculture-heading" class="section-title animate-on-scroll">Organic Agriculture Insights</h2>
                     <div class="featured-grid">
-                        <!-- Item 1 -->
                         <article class="featured-item animate-on-scroll delay-1">
-                            <a href="#" class="featured-item-link" aria-label="Read more about Sustainable Soil Health">
-                                <img src="https://via.placeholder.com/400x250/a5d6a7/4caf50?text=Soil+Health" alt="Close up of healthy soil">
+                            <a href="sub_pages/organic-agriculture.html" class="featured-item-link" aria-label="Read more about Sustainable Soil Health">
+                                <div class="placeholder-gradient pg-soil" role="img" aria-label="Close up of healthy soil">Soil Health</div>
                                 <div class="item-content">
                                     <h3>Sustainable Soil Health Practices</h3>
                                     <p>Exploring composting, cover cropping, and no-till methods for building resilient soil.</p>
@@ -93,10 +143,9 @@
                                 </div>
                             </a>
                         </article>
-                        <!-- Item 2 -->
                         <article class="featured-item animate-on-scroll delay-2">
-                            <a href="#" class="featured-item-link" aria-label="Read more about Pest Management">
-                                <img src="https://via.placeholder.com/400x250/c5e1a5/8bc34a?text=Pest+Control" alt="Beneficial insects on a plant">
+                            <a href="sub_pages/organic-agriculture.html" class="featured-item-link" aria-label="Read more about Pest Management">
+                                <div class="placeholder-gradient pg-pest" role="img" aria-label="Beneficial insects on a plant">Pest Control</div>
                                 <div class="item-content">
                                     <h3>Natural Pest Management Strategies</h3>
                                     <p>Integrated approaches using beneficial insects and organic deterrents.</p>
@@ -104,10 +153,9 @@
                                 </div>
                             </a>
                         </article>
-                        <!-- Item 3 -->
                         <article class="featured-item animate-on-scroll delay-3">
-                            <a href="#" class="featured-item-link" aria-label="Read more about Water Conservation">
-                                <img src="https://via.placeholder.com/400x250/b3e5fc/4fc3f7?text=Water+Wise" alt="Drip irrigation system in a field">
+                            <a href="sub_pages/organic-agriculture.html" class="featured-item-link" aria-label="Read more about Water Conservation">
+                                <div class="placeholder-gradient pg-water" role="img" aria-label="Drip irrigation system in a field">Water Wise</div>
                                 <div class="item-content">
                                     <h3>Water Conservation in Farming</h3>
                                     <p>Techniques like rainwater harvesting and drip irrigation for efficient water use.</p>
@@ -122,32 +170,29 @@
                 </div>
             </section>
 
-            <!-- Add similar sections for Photography, Travel etc. -->
-            <section id="featured-photography" class="featured-section featured-photography alternate-bg">
+            <section id="featured-photography" class="featured-section featured-photography alternate-bg" aria-labelledby="photo-heading">
                 <div class="container">
-                    <h2 class="section-title animate-on-scroll">Moments Through My Lens</h2>
-                    <!-- Photography content grid here -->
-                    <p class="animate-on-scroll delay-1">Placeholder for photography highlights...</p>
+                    <h2 id="photo-heading" class="section-title animate-on-scroll">Moments Through My Lens</h2>
+                    <p class="animate-on-scroll delay-1">Capturing nature, people, and urban energy — explore curated galleries from my photography journey.</p>
                     <div class="section-link animate-on-scroll delay-2">
                         <a href="sub_pages/photography.html" class="button button-secondary">View Photography Galleries</a>
                     </div>
                 </div>
             </section>
 
-            <section id="featured-travel" class="featured-section featured-travel">
+            <section id="featured-travel" class="featured-section featured-travel" aria-labelledby="travel-heading">
                 <div class="container">
-                    <h2 class="section-title animate-on-scroll">Travel Journals & Discoveries</h2>
-                    <!-- Travel content grid here -->
-                    <p class="animate-on-scroll delay-1">Placeholder for travel highlights...</p>
+                    <h2 id="travel-heading" class="section-title animate-on-scroll">Travel Journals &amp; Discoveries</h2>
+                    <p class="animate-on-scroll delay-1">Stories from off-the-beaten-path destinations, local encounters, and lessons from the road.</p>
                     <div class="section-link animate-on-scroll delay-2">
                         <a href="sub_pages/travel.html" class="button button-secondary">Read Travel Stories</a>
                     </div>
                 </div>
             </section>
         </div>
-        <aside class="github-sidebar">
+        <aside class="github-sidebar" aria-label="Sidebar">
             <section class="profile-card">
-                <img src="IMG_4759.JPG" alt="Portrait of Rinzin Dorji" class="profile-avatar" loading="lazy">
+                <img src="IMG_4759.JPG" alt="Portrait of Rinzin Dorji" class="profile-avatar" loading="lazy" decoding="async" width="96" height="96">
                 <h3>Rinzin Dorji</h3>
                 <p>Curating and sharing insights from a life of diverse interests. Join the exploration.</p>
                 <ul class="profile-links">
@@ -155,8 +200,8 @@
                     <li><a href="sub_pages/contact.html">Contact</a></li>
                 </ul>
             </section>
-            <section class="quick-links">
-                <h4>Quick Links</h4>
+            <section class="quick-links" aria-labelledby="quick-links-heading">
+                <h4 id="quick-links-heading">Quick Links</h4>
                 <ul>
                     <li><a href="sub_pages/organic-agriculture.html">Agriculture</a></li>
                     <li><a href="sub_pages/photography.html">Photography</a></li>
@@ -172,9 +217,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <h3><a href="/">Rinzin Dorji</a></h3>
+                    <h3><a href="index.html">Rinzin Dorji</a></h3>
                     <p>Curating and sharing insights from a life of diverse interests. Join the exploration.</p>
-                    <!-- Add Social Links Here -->
                 </div>
                 <nav class="footer-nav" aria-label="Footer Navigation">
                     <div>
@@ -203,7 +247,6 @@
         </div>
     </footer>
 
-    <!-- Link External JS -->
     <script src="script.js" defer></script>
 </body>
 </html>
