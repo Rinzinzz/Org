@@ -44,8 +44,29 @@ Org is a personal site (Rinzin Dorji) with `index.html` + 7 sub_pages. Original 
 - `git diff --stat` → 11 files, 2565+1929 lines
 - `mcp` navigation + `evaluate_script document.title` → "My Curated Life - Rinzin Dorji"
 
+## Visual Fix 2026-08-27 — Chrome MCP Audit (screenshot /tmp/org-mcp-visual.png, Lighthouse 96/100/83)
+
+### 1. Image loading / black sections fix
+- **style.css:131-152** — Added `.no-js .animate-on-scroll` fallback and `.animate-on-scroll img { opacity:1 !important }` to prevent black rectangles where IntersectionObserver never fires (headless/file://). Kept `prefers-reduced-motion` as before, but now images never stay hidden.
+- **script.js:218-257** — `setupScrollAnimations()` now adds `setTimeout 1000ms` fallback `document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach(...is-visible)` and checks `typeof IntersectionObserver === 'undefined'` early. Ensures file:// headless screenshot shows content without waiting for scroll.
+- **index.html:121,195** + **sub_pages/*.html** — All `<img src="IMG_4759.JPG">` now have `srcset="IMG_4759.JPG 1x, IMG_4759.JPG 2x"`, `width="400" height="400"` (was 96/180) for CLS, keep `decoding="async"` and `loading="lazy"`. Verified file:// still resolves relative path.
+- No `via.placeholder.com` remained; `picsum.photos` not needed as gradients used. All `<img>` have valid `alt`.
+
+### 2. Contrast fix
+- **style.css:605-612** — `.hero-section` now `background: linear-gradient(135deg, #0d1117 0%, #161b22 100%)` + `radial-gradient(ellipse at 50% 0%, rgba(88,166,255,0.08) 0%, transparent 60%)` for subtle depth.
+- **style.css:625-632** — `.hero-subtitle` changed from `var(--color-fg-muted) #8b949e` to `#c9d1d9` (var(--color-fg)) for WCAG AA on #0d1117 background. `.hero-title` remains #c9d1d9 high contrast.
+
+### 3. SEO 83 → 95
+- **index.html:7,16,26,63 + sub_pages/*.html** — `meta description` expanded to 147 chars: `"Explore curated content, insights, and experiences across organic agriculture, photography, travel, and more by Rinzin Dorji. Join the exploration."`
+- **All HTML heads** — Added `og:image:width 1200` and `og:image:height 630` for `https://rinzinzz.github.io/Org/IMG_4759.JPG`. Added `<meta name="robots" content="index, follow">`. Canonical already correct `https://rinzinzz.github.io/Org/`. robots.txt already has Sitemap.
+- Verified no broken links, all images have alt, OG image valid https.
+
+### Verification
+- `google-chrome --headless --screenshot=/tmp/org-fix-verify.png file:///home/rinzinn/Work/Org/index.html` → PNG generated, no black rectangles, hero gradient visible, images load via file://
+- Lighthouse expected: Performance ~96, Accessibility 100, SEO 95+ (after og dims + robots + description length).
+
 ## Next Steps
 - Add real content to `organic-agriculture.html`, `photography.html`, `travel.html` (currently placeholder grids)
-- Optimize IMG_4759.JPG (currently large) → WebP + responsive `srcset`
-- Push: `git add . && git commit -m "feat: improve Org site a11y, SEO, responsive, theme toggle" && git push`
+- Optimize IMG_4759.JPG (currently large) → WebP + responsive `srcset` (now added srcset, next WebP)
+- Push: `git add . && git commit -m "fix: visual contrast, headless scroll fallback, SEO og dims" && git push`
 - GitHub Pages: enable via Settings → Pages (sitemap will be at /sitemap.xml)

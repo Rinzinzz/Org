@@ -142,6 +142,16 @@ body {
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 
+/* Headless / no-JS fallback: ensure content is visible even if IntersectionObserver never fires */
+.no-js .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+}
+/* Never hide images inside animate-on-scroll containers — prevents black rectangles in headless/file:// */
+.animate-on-scroll img {
+    opacity: 1 !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .animate-on-scroll {
         transition: none;
@@ -603,7 +613,9 @@ section {
 
 /* Hero Section */
 .hero-section {
-    background: var(--color-bg-secondary);
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    /* subtle radial overlay for depth */
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(88,166,255,0.08) 0%, transparent 60%), linear-gradient(135deg, #0d1117 0%, #161b22 100%);
     padding: 3rem 0 2rem 0;
     text-align: center;
     border-bottom: 1px solid var(--color-border);
@@ -624,7 +636,7 @@ section {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--color-fg-muted);
+    color: #c9d1d9;
     margin-bottom: 2rem;
     max-width: 60ch;
     margin-left: auto;

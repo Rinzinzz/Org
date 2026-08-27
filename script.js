@@ -220,10 +220,20 @@
       if (!animatedElements || animatedElements.length === 0) {
         return;
       }
+      // Fallback for headless/file:// where IntersectionObserver may not fire: reveal all after 1s
+      const fallbackTimer = setTimeout(() => {
+        document.querySelectorAll('.animate-on-scroll:not(.is-visible)').forEach((el) => el.classList.add('is-visible'));
+      }, 1000);
       try {
+        // If IntersectionObserver not supported, fallback will handle it
+        if (typeof IntersectionObserver === 'undefined') {
+          document.querySelectorAll('.animate-on-scroll').forEach((el) => el.classList.add('is-visible'));
+          return;
+        }
         const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
         if (motionQuery.matches) {
           animatedElements.forEach((el) => el.classList.add('is-visible'));
+          clearTimeout(fallbackTimer);
           return;
         }
         const revealElement = (entries, observer) => {
